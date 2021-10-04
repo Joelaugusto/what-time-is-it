@@ -1,0 +1,103 @@
+//primary
+$blue: hsl(237, 18%, 59%);
+$red: hsl(345, 95%, 68%);
+
+//
+$white: hsl(0, 0%, 100%);
+$darkDesaturatedblue: hsl(236, 21%, 26%);
+$darkBlue: hsl(235, 16%, 14%);
+$veryDarkBlue: hsl(234, 17%, 12%);
+
+//
+$color1 : #332946;
+$color2 : #39314f;
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: grid;
+  grid-template-rows: 1fr 180px;
+  height: 100vh;
+}
+
+#time-container{
+  width: 100vw;
+  @include center();
+  background-image: url('./../images/bg-stars.svg');
+  background-color: $darkBlue;
+  flex-direction: column;
+}
+
+#time{
+  display: flex;
+}
+
+.digit-container{
+  display: grid;
+  grid-template-rows: 75px 75px;
+  grid-template-columns: 150px;
+  margin-left:30px;
+  
+    .a{
+      background: $color1;
+      border-radius: 10px;
+    }
+   .b{
+      background: $color2;
+     border-radius: 10px;
+    }
+  
+}
+
+
+.digit{
+  position: absolute;
+  @include center();
+  width: 150px;
+  height: 150px;
+  font-size: 80pt;
+  color: $red;
+}
+
+.footer{
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 25px;
+  color: $blue;
+}
+
+footer{
+  background-image: url('../images/pattern-hills.svg');
+  background-color: $darkBlue;
+  background-size: cover;
+  @include center();
+  
+  i{
+    margin: 0 15px;
+    color: $blue;
+    transition: 0.5s;
+    cursor: pointer;
+
+    &:hover{
+      color: $red;
+    }
+  }
+}
+
+h1{
+  color: $white;
+  text-align: center;
+  margin-bottom: 10vh;
+  text-transform: uppercase;
+}
